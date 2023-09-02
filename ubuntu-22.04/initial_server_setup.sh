@@ -5,7 +5,7 @@ USERNAME=carlos
 
 # Updates the package list and upgrades installed packages to the latest versions
 apt-get update
-apt-get upgrade
+apt-get -y upgrade
 
 # Add sudo user and grant privileges
 useradd --create-home --shell "/bin/bash" --groups sudo "${USERNAME}"
@@ -25,7 +25,7 @@ ufw --force enable
 
 # Update the apt package index and install packages to allow apt to use a repository over HTTPS
 apt-get update
-apt-get install ca-certificates curl gnupg
+apt-get -y install ca-certificates curl gnupg
 
 # Add Docker's official GPG key
 install -m 0755 -d /etc/apt/keyrings
@@ -42,7 +42,7 @@ echo \
 apt-get update
 
 # Install Docker Engine, containerd, and Docker Compose.
-apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Create the docker group
 groupadd docker
